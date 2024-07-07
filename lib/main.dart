@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         CreateRoomScreen.routeName: (context) => const MainManuScreen(),
         JoinRoomScreen.routeName: (context) => const MainManuScreen(),
       },
-      home: const MainManuScreen(),
+      initialRoute: MainManuScreen.routeName,
     );
   }
 }
