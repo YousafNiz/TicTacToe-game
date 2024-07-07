@@ -14,6 +14,7 @@ class CustomButtons extends StatelessWidget {
           BoxShadow(
             color: Colors.blue,
             blurRadius: 5,
+            spreadRadius: 0,
           )
         ],
       ),

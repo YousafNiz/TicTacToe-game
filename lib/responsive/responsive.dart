@@ -9,7 +9,7 @@ class Responsive extends StatelessWidget {
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(
-          maxHeight: 600,
+          maxWidth: 600,
         ),
         child: child,
       ),

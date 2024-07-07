@@ -3,6 +3,7 @@ import 'package:tictactoe/responsive/responsive.dart';
 import 'package:tictactoe/widgets/custom_buttons.dart';
 
 class MainManuScreen extends StatelessWidget {
+  static String routeName = '/main-manu';
   const MainManuScreen({super.key});
 
   @override
