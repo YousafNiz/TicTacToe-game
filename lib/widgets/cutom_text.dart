@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CutomText extends StatelessWidget {
+class CustomText extends StatelessWidget {
   final List<Shadow> shadows;
   final String text;
   final double fontSize;
-  const CutomText(
+  const CustomText(
       {super.key,
       required this.shadows,
       required this.text,
