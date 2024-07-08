@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tictactoe/responsive/responsive.dart';
+import 'package:tictactoe/widgets/custom_buttons.dart';
 import 'package:tictactoe/widgets/custom_text_field.dart';
 import 'package:tictactoe/widgets/cutom_text.dart';
 
@@ -23,20 +25,26 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            CustomText(
-                shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
-                text: 'Create Room',
-                fontSize: 70),
-            SizedBox(
-              height: size.height * 0.08,
-            ),
-            CustomTextField(
-                controller: _nameController, hintText: 'Enter you name')
-          ],
+      body: Responsive(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              const CustomText(
+                  shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
+                  text: 'Create Room',
+                  fontSize: 70),
+              SizedBox(
+                height: size.height * 0.08,
+              ),
+              CustomTextField(
+                  controller: _nameController, hintText: 'Enter you name'),
+              SizedBox(
+                height: size.height * 0.045,
+              ),
+              CustomButtons(onTap: () {}, text: 'Create')
+            ],
+          ),
         ),
       ),
     );
