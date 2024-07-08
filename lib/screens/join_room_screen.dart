@@ -36,7 +36,7 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
             children: [
               const CustomText(
                   shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
-                  text: 'Create Room',
+                  text: 'Join Room',
                   fontSize: 70),
               SizedBox(
                 height: size.height * 0.08,
