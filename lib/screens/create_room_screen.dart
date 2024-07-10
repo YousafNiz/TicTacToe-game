@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tictactoe/responsive/responsive.dart';
 import 'package:tictactoe/widgets/custom_buttons.dart';
 import 'package:tictactoe/widgets/custom_text_field.dart';
@@ -18,7 +17,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   @override
   void dispose() {
     super.dispose();
-    _nameController;
+    _nameController.dispose();
   }
 
   @override

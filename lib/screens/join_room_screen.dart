@@ -13,13 +13,13 @@ class JoinRoomScreen extends StatefulWidget {
 }
 
 class _JoinRoomScreenState extends State<JoinRoomScreen> {
-  final TextEditingController _gameIDController = TextEditingController();
+  final TextEditingController _gameIdController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _gameIDController.dispose();
+    _gameIdController.dispose();
     _nameController.dispose();
   }
 
@@ -47,7 +47,7 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
                 height: 20,
               ),
               CustomTextField(
-                  controller: _gameIDController, hintText: 'Enter Game ID'),
+                  controller: _gameIdController, hintText: 'Enter Game ID'),
               SizedBox(
                 height: size.height * 0.045,
               ),

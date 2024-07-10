@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tictactoe/responsive/responsive.dart';
 import 'package:tictactoe/screens/create_room_screen.dart';
+import 'package:tictactoe/screens/join_room_screen.dart';
 import 'package:tictactoe/widgets/custom_buttons.dart';
 
 class MainManuScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class MainManuScreen extends StatelessWidget {
   }
 
   void joinRoom(BuildContext context) {
-    Navigator.pushNamed(context, CreateRoomScreen.routeName);
+    Navigator.pushNamed(context, JoinRoomScreen.routeName);
   }
 
   const MainManuScreen({super.key});
