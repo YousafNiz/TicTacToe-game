@@ -1,5 +1,6 @@
 
 const exp = require('constants');
+const { Socket } = require('dgram');
 const express = require('express');
 const http = require('http');
 const mongoose = require('mongoose');
@@ -12,7 +13,11 @@ var io = require('socket.io')(server);
 
 app.use(express.json());
 
-const DB = '';
+const DB = 'mongodb+srv://Yousaf:usman123@cluster0.sbecsth.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+io.on('connetion', (socket) => {
+    console.log('conneted!')
+});
 
 mongoose.connect(DB).then(() => {
     console.log('connetion successful!');
