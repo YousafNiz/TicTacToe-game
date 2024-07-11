@@ -42,7 +42,8 @@ class _JoinRoomScreenState extends State<JoinRoomScreen> {
                 height: size.height * 0.08,
               ),
               CustomTextField(
-                  controller: _nameController, hintText: 'Enter you name'),
+                  controller: _nameController,
+                  hintText: 'Enter your full name'),
               const SizedBox(
                 height: 20,
               ),
