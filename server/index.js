@@ -16,7 +16,8 @@ app.use(express.json());
 const DB = 'mongodb+srv://Yousaf:usman123@cluster0.sbecsth.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 io.on('connetion', (socket) => {
-    console.log('conneted!')
+    console.log('conneted!');
+    socket.on('createRoom',({nickName}) => {});
 });
 
 mongoose.connect(DB).then(() => {
