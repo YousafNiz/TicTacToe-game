@@ -17,7 +17,10 @@ const DB = 'mongodb+srv://Yousaf:usman123@cluster0.sbecsth.mongodb.net/?retryWri
 
 io.on('connetion', (socket) => {
     console.log('conneted!');
-    socket.on('createRoom',({nickName}) => {});
+    socket.on('createRoom',({nickName}) => {
+        console.log(nickName);
+        console.log(socket.id);
+    });
 });
 
 mongoose.connect(DB).then(() => {

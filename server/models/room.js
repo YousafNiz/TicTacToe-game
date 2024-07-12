@@ -1,3 +1,5 @@
+const playersSchema = require("./players");
+
 const roomSchema = new mongoose.Schema({
 
     occupancy: {
@@ -12,5 +14,6 @@ const roomSchema = new mongoose.Schema({
         require: true,
         type: Number,
         default: 1,
-    }
+    },
+    players: [playersSchema]
 })
