@@ -20,7 +20,8 @@ io.on('connetion', (socket) => {
     console.log('conneted!');
     socket.on('createRoom',async ({nickName}) => {
         console.log(nickName);
-        let room = new Room();
+        try{
+            let room = new Room();
         let player = {
             socketID: socket.id,
             nickName,
@@ -30,7 +31,14 @@ io.on('connetion', (socket) => {
         room.turn = player;
         room = await room.save();
         console.log(room);
-        const roomID = room._id
+        const roomID = room._id.toString();
+
+        socket.join(roomID);
+        io.to(roomID).emit('Room is created', room)
+        } catch (e) {
+            console.log(e);
+        }
+        
     });
 });
 
