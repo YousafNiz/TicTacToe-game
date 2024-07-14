@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3000;
 var server = http.createServer(app);
+const Room = require ('./models/room')
 
 var io = require('socket.io')(server);
 
@@ -17,9 +18,19 @@ const DB = 'mongodb+srv://Yousaf:usman123@cluster0.sbecsth.mongodb.net/?retryWri
 
 io.on('connetion', (socket) => {
     console.log('conneted!');
-    socket.on('createRoom',({nickName}) => {
+    socket.on('createRoom',async ({nickName}) => {
         console.log(nickName);
-        console.log(socket.id);
+        let room = new Room();
+        let player = {
+            socketID: socket.id,
+            nickName,
+            playersType: 'x',
+        };
+        room.players.push(players);
+        room.turn = player;
+        room = await room.save();
+        console.log(room);
+        const roomID = room._id
     });
 });
 
