@@ -1,6 +1,4 @@
 
-const exp = require('constants');
-const { Socket } = require('dgram');
 const express = require('express');
 const http = require('http');
 const mongoose = require('mongoose');
@@ -9,7 +7,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 var server = http.createServer(app);
 const Room = require ('./models/room')
-
 var io = require('socket.io')(server);
 
 app.use(express.json());
@@ -31,10 +28,10 @@ io.on('connetion', (socket) => {
         room.turn = player;
         room = await room.save();
         console.log(room);
-        const roomID = room._id.toString();
+        const roomId = room._id.toString();
 
-        socket.join(roomID);
-        io.to(roomID).emit('Room is created', room)
+        socket.join(roomId);
+        io.to(roomId).emit('Roomiscreated', room)
         } catch (e) {
             console.log(e);
         }

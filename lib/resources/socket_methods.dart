@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tictactoe/resources/socket_client.dart';
 import 'package:tictactoe/screens/game_screen.dart';
@@ -14,8 +15,10 @@ class SocketMethods {
   }
 
   void roomiscreatedlisner(BuildContext context) {
-    _socketClient.on('Room is created', (room) {
-      print(room);
+    _socketClient.on('Roomiscreated', (room) {
+      if (kDebugMode) {
+        print(room);
+      }
       Navigator.pushNamed(context, GameScreen.routeName);
     });
   }
