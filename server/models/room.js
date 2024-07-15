@@ -1,5 +1,5 @@
 const playersSchema = require("./players");
-
+const mongoose = require("mongoose");
 const roomSchema = new mongoose.Schema({
 
     occupancy: {

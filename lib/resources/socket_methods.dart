@@ -15,6 +15,7 @@ class SocketMethods {
 
   void roomiscreatedlisner(BuildContext context) {
     _socketClient.on('Room is created', (room) {
+      print(room);
       Navigator.pushNamed(context, GameScreen.routeName);
     });
   }
