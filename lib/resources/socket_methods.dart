@@ -1,5 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tictactoe/provider/room_data_provider.dart';
 import 'package:tictactoe/resources/socket_client.dart';
 import 'package:tictactoe/screens/game_screen.dart';
 
@@ -16,9 +17,8 @@ class SocketMethods {
 
   void roomiscreatedlisner(BuildContext context) {
     _socketClient.on('Roomiscreated', (room) {
-      if (kDebugMode) {
-        print(room);
-      }
+      Provider.of<RoomDataProvider>(context, listen: false)
+          .updateRoomData(room);
       Navigator.pushNamed(context, GameScreen.routeName);
     });
   }
