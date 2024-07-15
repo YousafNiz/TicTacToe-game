@@ -15,6 +15,15 @@ class SocketMethods {
     }
   }
 
+  void joinRoom(String nickName, String roomId) {
+    if (nickName.isNotEmpty && roomId.isNotEmpty) {
+      _socketClient.emit('joinRoom', {
+        'nickName': nickName,
+        'roomId': roomId,
+      });
+    }
+  }
+
   void roomiscreatedlisner(BuildContext context) {
     _socketClient.on('Roomiscreated', (room) {
       Provider.of<RoomDataProvider>(context, listen: false)
