@@ -1,19 +1,35 @@
+const { default: mongoose } = require("mongoose");
 const playersSchema = require("./players");
-const mongoose = require("mongoose");
-const roomSchema = new mongoose.Schema({
 
+
+const roomSchema = new mongoose.Schema({
     occupancy: {
-        type: Number,
-        default: 2,
+      type: Number,
+      default: 2,
     },
     maxRounds: {
-        type: Number,
-        default: 6,
+      type: Number,
+      default: 6,
     },
-    currentRounds: {
-        require: true,
-        type: Number,
-        default: 1,
+    currentRound: {
+      required: true,
+      type: Number,
+      default: 1,
     },
-    players: [playersSchema]
-})
+    players: [playersSchema],
+    isJoin: {
+      type: Boolean,
+      default: true,
+    },
+    turn: playersSchema,
+    turnIndex: {
+      type: Number,
+      default: 0,
+    },
+  });
+
+  const roomModel = mongoose.model('Room', roomSchema);
+  module.exports = roomModel;
+  
+//   const roomModel = mongoose.model("Room", roomSchema);
+//   module.exports = roomModel;
