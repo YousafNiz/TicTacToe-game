@@ -54,6 +54,7 @@ io.on('connetion', (socket) => {
                 socket.join(roomId);
                 room.players.push(player);
                 room = await room.save();
+                io.to(roomId).emit('JoinRoomSuccess', room);
             } else {
                 socket.emit(
                     'errorOccurred','The game is in progress, try again later'
