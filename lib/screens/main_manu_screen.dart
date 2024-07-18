@@ -6,7 +6,7 @@ import 'package:tictactoe/widgets/custom_buttons.dart';
 
 class MainMenuScreen extends StatelessWidget {
   static String routeName = '/main-menu';
-  const MainMenuScreen({Key? key}) : super(key: key);
+  const MainMenuScreen({super.key});
 
   void createRoom(BuildContext context) {
     Navigator.pushNamed(context, CreateRoomScreen.routeName);

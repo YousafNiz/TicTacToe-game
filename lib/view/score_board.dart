@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tictactoe/provider/room_data_provider.dart';
 
 class Scoreboard extends StatelessWidget {
-  const Scoreboard({Key? key}) : super(key: key);
+  const Scoreboard({super.key});
 
   @override
   Widget build(BuildContext context) {
