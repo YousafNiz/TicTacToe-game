@@ -7,7 +7,7 @@ import 'package:tictactoe/widgets/cutom_text.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
-  const CreateRoomScreen({super.key});
+  const CreateRoomScreen({Key? key}) : super(key: key);
 
   @override
   State<CreateRoomScreen> createState() => _CreateRoomScreenState();
@@ -20,7 +20,7 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   @override
   void initState() {
     super.initState();
-    _socketMethods.roomiscreatedlisTener(context);
+    _socketMethods.createRoomSuccessListener(context);
   }
 
   @override
@@ -32,29 +32,38 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Responsive(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const CustomText(
-                  shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
-                  text: 'Create Room',
-                  fontSize: 70),
-              SizedBox(
-                height: size.height * 0.08,
+                shadows: [
+                  Shadow(
+                    blurRadius: 40,
+                    color: Colors.blue,
+                  ),
+                ],
+                text: 'Create Room',
+                fontSize: 70,
               ),
+              SizedBox(height: size.height * 0.08),
               CustomTextField(
-                  controller: _nameController, hintText: 'Enter you name'),
-              SizedBox(
-                height: size.height * 0.045,
+                controller: _nameController,
+                hintText: 'Enter your nickname',
               ),
-              CustomButtons(
-                  onTap: () => _socketMethods.createRoom(_nameController.text),
-                  text: 'Create')
+              SizedBox(height: size.height * 0.045),
+              CustomButton(
+                  onTap: () => _socketMethods.createRoom(
+                        _nameController.text,
+                      ),
+                  text: 'Create'),
             ],
           ),
         ),

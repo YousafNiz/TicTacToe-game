@@ -4,18 +4,17 @@ import 'package:tictactoe/screens/create_room_screen.dart';
 import 'package:tictactoe/screens/join_room_screen.dart';
 import 'package:tictactoe/widgets/custom_buttons.dart';
 
-class MainManuScreen extends StatelessWidget {
-  static String routeName = '/main-manu';
+class MainMenuScreen extends StatelessWidget {
+  static String routeName = '/main-menu';
+  const MainMenuScreen({Key? key}) : super(key: key);
 
-  void creatRoom(BuildContext context) {
+  void createRoom(BuildContext context) {
     Navigator.pushNamed(context, CreateRoomScreen.routeName);
   }
 
   void joinRoom(BuildContext context) {
     Navigator.pushNamed(context, JoinRoomScreen.routeName);
   }
-
-  const MainManuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +23,12 @@ class MainManuScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButtons(
-              onTap: () => creatRoom(context),
+            CustomButton(
+              onTap: () => createRoom(context),
               text: 'Create Room',
             ),
             const SizedBox(height: 20),
-            CustomButtons(
+            CustomButton(
               onTap: () => joinRoom(context),
               text: 'Join Room',
             ),

@@ -1,22 +1,21 @@
+const mongoose = require("mongoose");
 
-const mongoose = require('mongoose');
-
-const playersSchema = new mongoose.Schema({
-    nickName: {
-        type: String,
-        trim: true,
-    },
-    socketID: {
-        type: String,
-    },
-    points: {
-        type: Number,
-        default: 0,
-    },
-    playersType: {
-        require: true,
-        type: String,
-    }
+const playerSchema = new mongoose.Schema({
+  nickname: {
+    type: String,
+    trim: true,
+  },
+  socketID: {
+    type: String,
+  },
+  points: {
+    type: Number,
+    default: 0,
+  },
+  playerType: {
+    required: true,
+    type: String,
+  },
 });
 
-module.exports = playersSchema;
+module.exports = playerSchema;

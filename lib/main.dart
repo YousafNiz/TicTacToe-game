@@ -12,7 +12,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -20,15 +21,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: backGroupColor,
+          scaffoldBackgroundColor: bgColor,
         ),
         routes: {
-          MainManuScreen.routeName: (context) => const MainManuScreen(),
-          CreateRoomScreen.routeName: (context) => const CreateRoomScreen(),
+          MainMenuScreen.routeName: (context) => const MainMenuScreen(),
           JoinRoomScreen.routeName: (context) => const JoinRoomScreen(),
+          CreateRoomScreen.routeName: (context) => const CreateRoomScreen(),
           GameScreen.routeName: (context) => const GameScreen(),
         },
-        initialRoute: MainManuScreen.routeName,
+        initialRoute: MainMenuScreen.routeName,
       ),
     );
   }
