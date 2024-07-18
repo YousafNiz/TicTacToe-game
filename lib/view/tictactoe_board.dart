@@ -4,7 +4,7 @@ import 'package:tictactoe/provider/room_data_provider.dart';
 import 'package:tictactoe/resources/socket_methods.dart';
 
 class TicTacToeBoard extends StatefulWidget {
-  const TicTacToeBoard({Key? key}) : super(key: key);
+  const TicTacToeBoard({super.key});
 
   @override
   State<TicTacToeBoard> createState() => _TicTacToeBoardState();

@@ -5,10 +5,10 @@ class CustomButton extends StatelessWidget {
 
   final String text;
   const CustomButton({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +26,16 @@ class CustomButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         onPressed: onTap,
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 16,
-          ),
-        ),
         style: ElevatedButton.styleFrom(
           minimumSize: Size(
             width,
             50,
+          ),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 16,
           ),
         ),
       ),
