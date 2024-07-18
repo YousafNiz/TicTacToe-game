@@ -7,7 +7,7 @@ import 'package:tictactoe/widgets/cutom_text.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
-  const CreateRoomScreen({Key? key}) : super(key: key);
+  const CreateRoomScreen({super.key});
 
   @override
   State<CreateRoomScreen> createState() => _CreateRoomScreenState();

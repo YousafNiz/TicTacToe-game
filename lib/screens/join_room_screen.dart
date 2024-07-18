@@ -7,7 +7,7 @@ import 'package:tictactoe/widgets/cutom_text.dart';
 
 class JoinRoomScreen extends StatefulWidget {
   static String routeName = '/join-room';
-  const JoinRoomScreen({Key? key}) : super(key: key);
+  const JoinRoomScreen({super.key});
 
   @override
   State<JoinRoomScreen> createState() => _JoinRoomScreenState();

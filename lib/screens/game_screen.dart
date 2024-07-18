@@ -8,7 +8,7 @@ import 'package:tictactoe/view/waiting_lobby.dart';
 
 class GameScreen extends StatefulWidget {
   static String routeName = '/game';
-  const GameScreen({Key? key}) : super(key: key);
+  const GameScreen({super.key});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
